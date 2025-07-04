@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر المنتجات - تسوق أونلاين</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">جاري التحميل...</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <h1><i class="fas fa-shopping-bag"></i> متجري</h1>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="ابحث عن المنتجات..." class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link active">الرئيسية</a></li>
+                        <li><a href="#categories" class="nav-link">الفئات</a></li>
+                        <li><a href="#products" class="nav-link">المنتجات</a></li>
+                        <li><a href="#deals" class="nav-link">العروض</a></li>
+                        <li><a href="#contact" class="nav-link">اتصل بنا</a></li>
+                    </ul>
+                </nav>
+
+                <!-- User Actions -->
+                <div class="user-actions">
+                    <button class="action-btn" id="wishlist-btn">
+                        <i class="fas fa-heart"></i>
+                        <span class="badge" id="wishlist-count">0</span>
+                    </button>
+                    <button class="action-btn" id="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge" id="cart-count">0</span>
+                    </button>
+                    <button class="action-btn" id="user-btn">
+                        <i class="fas fa-user"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-background">
+                <div class="hero-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-line">اكتشف عالم</span>
+                            <span class="title-line highlight">التسوق الرقمي</span>
+                        </h1>
+                        <p class="hero-description">
+                            تسوق من أفضل المنتجات بأسعار مميزة وجودة عالية. 
+                            اكتشف مجموعة واسعة من المنتجات في جميع الفئات.
+                        </p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary">تسوق الآن</button>
+                            <button class="btn btn-secondary">اكتشف المزيد</button>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="hero-product-card">
+                            <div class="product-image-placeholder">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <div class="floating-elements">
+                                <div class="floating-element element-1">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="floating-element element-2">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="floating-element element-3">
+                                    <i class="fas fa-gift"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">تسوق حسب الفئة</h2>
+                    <p class="section-description">اختر من مجموعة متنوعة من الفئات</p>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card" data-category="electronics">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3 class="category-title">إلكترونيات</h3>
+                        <p class="category-count">+500 منتج</p>
+                    </div>
+                    <div class="category-card" data-category="fashion">
+                        <div class="category-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h3 class="category-title">أزياء</h3>
+                        <p class="category-count">+800 منتج</p>
+                    </div>
+                    <div class="category-card" data-category="home">
+                        <div class="category-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="category-title">منزل ومطبخ</h3>
+                        <p class="category-count">+300 منتج</p>
+                    </div>
+                    <div class="category-card" data-category="sports">
+                        <div class="category-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3 class="category-title">رياضة</h3>
+                        <p class="category-count">+200 منتج</p>
+                    </div>
+                    <div class="category-card" data-category="books">
+                        <div class="category-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="category-title">كتب</h3>
+                        <p class="category-count">+150 منتج</p>
+                    </div>
+                    <div class="category-card" data-category="beauty">
+                        <div class="category-icon">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3 class="category-title">جمال وعناية</h3>
+                        <p class="category-count">+400 منتج</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section id="products" class="featured-products">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">المنتجات المميزة</h2>
+                    <p class="section-description">أفضل المنتجات المختارة خصيصاً لك</p>
+                </div>
+                
+                <!-- Product Filters -->
+                <div class="product-filters">
+                    <button class="filter-btn active" data-filter="all">الكل</button>
+                    <button class="filter-btn" data-filter="electronics">إلكترونيات</button>
+                    <button class="filter-btn" data-filter="fashion">أزياء</button>
+                    <button class="filter-btn" data-filter="home">منزل</button>
+                    <button class="filter-btn" data-filter="sports">رياضة</button>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="products-grid">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+
+                <!-- Load More Button -->
+                <div class="load-more-container">
+                    <button class="btn btn-outline" id="load-more-btn">عرض المزيد</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deals Section -->
+        <section id="deals" class="deals">
+            <div class="container">
+                <div class="deals-header">
+                    <h2 class="section-title">عروض محدودة الوقت</h2>
+                    <div class="countdown-timer" id="countdown-timer">
+                        <div class="timer-unit">
+                            <span class="timer-number" id="days">00</span>
+                            <span class="timer-label">يوم</span>
+                        </div>
+                        <div class="timer-unit">
+                            <span class="timer-number" id="hours">00</span>
+                            <span class="timer-label">ساعة</span>
+                        </div>
+                        <div class="timer-unit">
+                            <span class="timer-number" id="minutes">00</span>
+                            <span class="timer-label">دقيقة</span>
+                        </div>
+                        <div class="timer-unit">
+                            <span class="timer-number" id="seconds">00</span>
+                            <span class="timer-label">ثانية</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="deals-grid">
+                    <div class="deal-card featured-deal">
+                        <div class="deal-badge">خصم 50%</div>
+                        <div class="deal-image">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="deal-content">
+                            <h3 class="deal-title">لابتوب جيمنج عالي الأداء</h3>
+                            <div class="deal-price">
+                                <span class="current-price">2,500 ج.م</span>
+                                <span class="original-price">5,000 ج.م</span>
+                            </div>
+                            <button class="btn btn-primary">اشتري الآن</button>
+                        </div>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="deal-badge">خصم 30%</div>
+                        <div class="deal-image">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="deal-content">
+                            <h3 class="deal-title">سماعات لاسلكية</h3>
+                            <div class="deal-price">
+                                <span class="current-price">350 ج.م</span>
+                                <span class="original-price">500 ج.م</span>
+                            </div>
+                            <button class="btn btn-primary">اشتري الآن</button>
+                        </div>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="deal-badge">خصم 25%</div>
+                        <div class="deal-image">
+                            <i class="fas fa-watch"></i>
+                        </div>
+                        <div class="deal-content">
+                            <h3 class="deal-title">ساعة ذكية</h3>
+                            <div class="deal-price">
+                                <span class="current-price">750 ج.م</span>
+                                <span class="original-price">1,000 ج.م</span>
+                            </div>
+                            <button class="btn btn-primary">اشتري الآن</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h2 class="newsletter-title">اشترك في النشرة الإخبارية</h2>
+                        <p class="newsletter-description">احصل على أحدث العروض والمنتجات الجديدة</p>
+                    </div>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="أدخل بريدك الإلكتروني" class="newsletter-input">
+                        <button class="btn btn-primary">اشتراك</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">متجري</h3>
+                    <p class="footer-description">
+                        متجرك الإلكتروني المفضل للتسوق أونلاين. 
+                        نوفر أفضل المنتجات بأسعار مميزة وجودة عالية.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#categories">الفئات</a></li>
+                        <li><a href="#products">المنتجات</a></li>
+                        <li><a href="#deals">العروض</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">خدمة العملاء</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">اتصل بنا</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">سياسة الإرجاع</a></li>
+                        <li><a href="#">الشحن والتوصيل</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">معلومات الاتصال</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +20 123 456 7890</p>
+                        <p><i class="fas fa-envelope"></i> info@mystore.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> القاهرة، مصر</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 متجري. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>عربة التسوق</h3>
+            <button class="close-cart" id="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>المجموع: <span id="cart-total">0 ج.م</span></span>
+            </div>
+            <button class="btn btn-primary btn-full">إتمام الشراء</button>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body" id="modal-body">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="effects.js"></script>
+</body>
+</html>
+
